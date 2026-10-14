@@ -6,6 +6,14 @@ var sprsheet = []
 var MAPLEN = 128
 var map_tiles = []
 
+func draw_tilemap():
+	for ytile in MAPLEN:
+		for xtile in MAPLEN:
+			var tile = Sprite2D.new()
+			tile.texture = sprsheet[map_tiles[ytile][xtile]]
+			tile.position = Vector2(xtile*64, ytile*64)
+			$tilemap.add_child(tile)
+
 func _ready() -> void:
 	#	TODO more sophisticated/selective loading routine
 	sprsheet.append(preload("res://assets/tiles/grass.png"))
@@ -19,12 +27,7 @@ func _ready() -> void:
 		map_tiles.append(curr_row)
 
 	# map drawing func
-	for ytile in MAPLEN:
-		for xtile in MAPLEN:
-			var tile = Sprite2D.new()
-			tile.texture = sprsheet[map_tiles[ytile][xtile]]
-			tile.position = Vector2(xtile*64, ytile*64)
-			$tilemap.add_child(tile)
+	draw_tilemap()
 
 func _process(_delta: float) -> void:
 	pass
