@@ -11,8 +11,14 @@ config_version=5
 [application]
 
 config/name="dunia2d"
+run/main_scene="uid://b8i5ad6eccqnl"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="uid://drixyb7og2kdc"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
 
 [rendering]
 
