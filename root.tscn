@@ -1,8 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://b8i5ad6eccqnl"]
+[gd_scene load_steps=4 format=3 uid="uid://b8i5ad6eccqnl"]
 
 [ext_resource type="Script" uid="uid://cyybcqobv6uy5" path="res://assets/code/WorldRender.gd" id="1_pq8q7"]
+[ext_resource type="Texture2D" uid="uid://b8e2btfn5w7e7" path="res://assets/char/human.png" id="1_pyidc"]
+[ext_resource type="Script" uid="uid://b4vegf1quh62j" path="res://assets/code/PlayerCode.gd" id="1_vvh5c"]
 
 [node name="root" type="Node2D"]
+
+[node name="player" type="CharacterBody2D" parent="."]
+z_index = 1
+position = Vector2(8, 8)
+rotation = 0.11524848
+script = ExtResource("1_vvh5c")
+
+[node name="playerspr" type="Sprite2D" parent="player"]
+texture = ExtResource("1_pyidc")
 
 [node name="world" type="Node2D" parent="."]
 script = ExtResource("1_pq8q7")

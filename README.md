@@ -1,5 +1,5 @@
 TODO
-	64x64 grid and localmap tile system
+X	64x64 grid and localmap tile system
 	character and numpad movement (check against localsolids)
 	localcoll solid tiles 
 	server and netcode
