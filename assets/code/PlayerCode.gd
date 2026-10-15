@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends Node2D
 
 var target_pos : Vector2 = position
 
@@ -11,9 +11,6 @@ func _input(event: InputEvent) -> void:
 		var tary = get_global_mouse_position().y - (int(get_global_mouse_position().y) % 16)
 		target_pos = Vector2(tarx, tary)
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if position.distance_to(target_pos) > 0.0:
-		velocity = position.direction_to(target_pos) * 64.0
-		move_and_slide()
-	else:
-		velocity = Vector2.ZERO
+		position = position.move_toward(target_pos, 100*delta)
