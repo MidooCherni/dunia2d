@@ -11,7 +11,7 @@ func draw_tilemap():
 		for xtile in MAPLEN:
 			var tile = Sprite2D.new()
 			tile.texture = sprsheet[map_tiles[ytile][xtile]]
-			tile.position = Vector2(xtile*16, ytile*16)
+			tile.position = Vector2(8+xtile*16, 8+ytile*16)
 			$tilemap.add_child(tile)
 
 func _ready() -> void:

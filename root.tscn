@@ -8,12 +8,12 @@
 
 [node name="player" type="CharacterBody2D" parent="."]
 z_index = 1
-position = Vector2(8, 8)
 rotation = 0.11524848
 script = ExtResource("1_vvh5c")
 
 [node name="playerspr" type="Sprite2D" parent="player"]
 texture = ExtResource("1_pyidc")
+centered = false
 
 [node name="world" type="Node2D" parent="."]
 script = ExtResource("1_pq8q7")
